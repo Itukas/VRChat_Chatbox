@@ -1,4 +1,3 @@
-import threading
 import time
 from datetime import datetime
 from pythonosc import udp_client
@@ -6,6 +5,7 @@ from pythonosc import udp_client
 # === 配置 ===
 IP = "127.0.0.1"
 PORT = 9000
+
 
 # === 终端颜色代码 (让界面更好看) ===
 class Color:
@@ -19,6 +19,7 @@ class Color:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     END = '\033[0m'
+
 
 # === OSC 客户端 ===
 class VRCChatboxClient:
@@ -39,13 +40,14 @@ class VRCChatboxClient:
     def send_typing(self, is_typing):
         self.client.send_message("/chatbox/typing", [is_typing])
 
+
 def main():
     client = VRCChatboxClient(IP, PORT)
 
     print(f"{Color.CYAN}{'-' * 40}{Color.END}")
     print(f"{Color.BOLD} VRChat Chatbox{Color.END}")
     print(f" {Color.YELLOW}•{Color.END} 输入内容并回车发送")
-    print(f" {Color.YELLOW}•{Color.END} 输入 'exit' 或 'quit' 退出")
+    print(f" {Color.YELLOW}•{Color.END} 输入 'exit' 或 'quit' 或直接关闭退出")
     print(f"{Color.CYAN}{'-' * 40}{Color.END}")
 
     try:
@@ -75,6 +77,7 @@ def main():
 
     except KeyboardInterrupt:
         print(f"\n{Color.RED}程序已停止 (KeyboardInterrupt){Color.END}")
+
 
 if __name__ == "__main__":
     main()
