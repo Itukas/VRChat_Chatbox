@@ -1,5 +1,5 @@
 # VRChat 轻量Chatbox
-极简的vrc聊天工具，实现英文以外的输入
+极简的vrc聊天工具，实现VR模式下英文以外的输入
 <img width="1148" height="544" alt="image" src="https://github.com/user-attachments/assets/8acaf204-39a7-4d1d-bb3d-52f401a36fff" />
 
 ## 🛠️ 环境要求
